@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  web2:
+    image: second-site-image:latest
+    ports:
+      - "8443:443"
+    secrets:
+      - site2_cert
+      - site2_key
+secrets:
+  site2_cert:
+    file: ./second.crt
+  site2_key:
+    file: ./second.key
